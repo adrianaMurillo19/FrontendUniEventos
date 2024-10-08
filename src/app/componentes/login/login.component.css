@@ -1,0 +1,53 @@
+.navbar {
+  background-color: #0006FF;
+}
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+
+/* Estilos del contenedor de login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+.login-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.login-box h6 {
+  color: #6a0dad;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-control {
+  border-radius: 10px;
+}
+.btn-iniciar-sesion {
+  background-color: #0006FF;
+  color: white;
+  border-radius: 20px;
+  width: 100%;
+}
+.btn-iniciar-sesion:hover {
+  background-color: #0004cc;
+}
+.forgot-password {
+  color: #6a0dad;
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+}
+.forgot-password:hover {
+  text-decoration: underline;
+}
+.header-icon {
+  margin-left: 10px;
+  color: white;
+}

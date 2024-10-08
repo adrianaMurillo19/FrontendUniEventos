@@ -1,0 +1,22 @@
+.navbar {
+  background-color: #0006FF;
+}
+.navbar-nav .nav-link {
+  color: white !important;
+}
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+.event-card {
+  margin-top: 20px;
+}
+.event-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.btn-comprar {
+  background-color: #0006FF;
+  color: white;
+}
