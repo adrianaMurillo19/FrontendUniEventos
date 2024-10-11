@@ -6,9 +6,9 @@ import { EventoDTO } from '../../dto/evento-dto'; // DTO de Evento
 
 @Component({
   selector: 'app-inicio',
- /* standalone: true,
+ /* 
   imports: [
-    CommonModule, // Módulos comunes de Angular
+    
     HttpClientModule, // Módulo de HttpClient
     DatePipe // Pipe para manejar fechas en las plantillas
   ],*/
