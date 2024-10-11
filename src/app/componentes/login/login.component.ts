@@ -13,19 +13,23 @@ import { SesionDTO} from '../../dto/sesion-dto';
 })
 export class LoginComponent {
 
-  //nuevo
+  alerta!: { mensaje: any; tipo: string; };
+  tokenService: any;
+  authService: any;
 
-  sesion: SesionDTO;
-  //faltan parametros en el constructor
-  constructor(){
-    this.sesion = new SesionDTO();
+  public login(){
+    this.authService.login(this.loginDTO).subscribe({
+    next: (data: { respuesta: { token: any; }; }) => {
+    this.tokenService.login(data.respuesta.token);
+  },
+  error: (error: { error: { respuesta: any; }; }) => {
+  this.alerta = { mensaje: error.error.respuesta, tipo: "danger" };
   }
+  });
+}
 
-  //metodos para validar el inicio de sesion
-  public iniciarSesion() {
-    /// cuerpo del metodo
-    
-
+  loginDTO(loginDTO: any) {
+    throw new Error('Method not implemented.');
   }
 
 }
