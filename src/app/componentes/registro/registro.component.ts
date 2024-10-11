@@ -6,8 +6,8 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registro',
-  standalone: true,
-  imports: [FormsModule, CommonModule],//nuevo
+  //standalone: true,
+  //imports: [FormsModule, CommonModule],//nuevo
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
 })

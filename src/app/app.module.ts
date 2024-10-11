@@ -34,7 +34,7 @@ const routes: Routes = [
     AppComponent, // Declarar AppComponent aquí
     InicioComponent,
     LoginComponent,
-    //RegistroComponent
+    RegistroComponent
   ],
 
   imports: [
@@ -47,7 +47,7 @@ const routes: Routes = [
     FormsModule,
    
     NgSelectModule, // >>> revisar MODULO
-    RegistroComponent, // Importa el componente standalone
+    //RegistroComponent, // Importa el componente standalone
 
   ],
  // providers: [{ provide: HTTP_INTERCEPTORS,  multi: true },provideHttpClient(), ],
