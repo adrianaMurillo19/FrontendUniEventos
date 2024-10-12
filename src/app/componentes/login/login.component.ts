@@ -1,35 +1,40 @@
 import { Component } from '@angular/core';
-import { SesionDTO} from '../../dto/sesion-dto';
-
+import { AuthService } from '../../servicios/auth.service'; // Asegúrate de que el servicio está en la carpeta correcta
+import { SesionDTO } from '../../dto/sesion-dto';
+import { TokenService } from '../../servicios/token.service'; // Servicio para manejar el token
+import { Router } from '@angular/router';
 
 
 
 @Component({
   selector: 'app-login',
-  //standalone: true,
-  //imports: [],
+  
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
 
-  alerta!: { mensaje: any; tipo: string; };
-  tokenService: any;
-  authService: any;
+  // logica 
 
-  public login(){
-    this.authService.login(this.loginDTO).subscribe({
-    next: (data: { respuesta: { token: any; }; }) => {
-    this.tokenService.login(data.respuesta.token);
-  },
-  error: (error: { error: { respuesta: any; }; }) => {
-  this.alerta = { mensaje: error.error.respuesta, tipo: "danger" };
-  }
-  });
-}
+  sesionDTO: SesionDTO = new SesionDTO();
+  error: string = '';
 
-  loginDTO(loginDTO: any) {
-    throw new Error('Method not implemented.');
+
+  //constructor
+  constructor(private authService: AuthService, private tokenService: TokenService, private router: Router) {}
+    
+     // Método para iniciar sesión
+  onLogin(): void {
+    this.authService.login(this.sesionDTO).subscribe({
+      next: (data) => {
+        this.tokenService.setToken(data.token); // Guardar el token en el servicio
+        this.router.navigate(['/']); // Redirigir al usuario a la página de inicio
+      },
+      error: (err) => {
+        this.error = 'Error en el inicio de sesión. Verifica tus credenciales';
+      }
+    });
+
   }
 
 }

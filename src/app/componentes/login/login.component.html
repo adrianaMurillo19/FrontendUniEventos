@@ -56,19 +56,21 @@
     <!-- Contenedor de login -->
     <div class="login-container" id="login-contenedor">
         <div class="login-box">
-            <h6>INICIAR SESIÓN</h6>
-            <form>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="correoElectronico" placeholder="Correo Electrónico">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
-                </div>
-                <a href="#" class="forgot-password">¿Olvidaste la contraseña?</a>
-                <button type="submit" class="btn btn-iniciar-sesion mt-3">Iniciar sesión</button>
-            </form>
+          <h6>INICIAR SESIÓN</h6>
+          <form (ngSubmit)="onLogin()">
+            <div class="form-group">
+              <input type="email" class="form-control" [(ngModel)]="sesionDTO.email" name="email" placeholder="Correo Electrónico" required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" [(ngModel)]="sesionDTO.password" name="password" placeholder="Contraseña" required>
+            </div>
+            <a href="#" class="forgot-password">¿Olvidaste la contraseña?</a>
+            <button type="submit" class="btn btn-iniciar-sesion mt-3">Iniciar sesión</button>
+            <p *ngIf="error" class="error-message">{{ error }}</p>
+          </form>
         </div>
-    </div>
+      </div>
+      
 
     <!-- Pie de Página -->
 <footer class="footer mt-auto py-3 text-white" style="background-color: #0006FF;">
